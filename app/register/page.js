@@ -185,7 +185,7 @@ export default function Register() {
                 شروط الخدمة
               </Link>{' '}
               و{' '}
-              <Link href="/privacy" className="text-[#ffa509] hover:text-[#ff9100] transition-colors">
+              <Link href="/privacy-policy" className="text-[#ffa509] hover:text-[#ff9100] transition-colors">
                 سياسة الخصوصية
               </Link>
             </div>
