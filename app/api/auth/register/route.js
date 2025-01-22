@@ -8,10 +8,10 @@ export async function POST(request) {
   try {
     await connectDB();
     
-    const { name, email, password } = await request.json();
+    const { name, email, password, phone } = await request.json();
 
     // Validate input
-    if (!name || !email || !password) {
+    if (!name || !email || !password || !phone) {
       return NextResponse.json(
         { success: false, error: 'Please provide all required fields' },
         { status: 400 }
@@ -38,6 +38,7 @@ export async function POST(request) {
       name,
       email: lowercaseEmail,
       password: hashedPassword,
+      phone,
       role: 'user'
     });
 

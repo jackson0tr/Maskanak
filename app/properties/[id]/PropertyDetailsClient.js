@@ -151,202 +151,432 @@ export default function PropertyDetailsClient({ initialProperty }) {
   }
 
   return (
+    // <>
+    //   <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    //     {error && (
+    //       <Alert
+    //         type="error"
+    //         message={error}
+    //         onClose={() => setError("")}
+    //         className="mb-4"
+    //       />
+    //     )}
+
+    //     {/* Property Title Section */}
+    //     <div className="mb-8">
+    //       <h1 className="text-4xl font-bold text-[#050b2c] mb-4">{property.title}</h1>
+    //       <div className="flex items-center gap-2 text-gray-600">
+    //         <FaMapMarkerAlt className="text-[#ffa509]" />
+    //         <span>{property.location}</span>
+    //       </div>
+    //     </div>
+
+    //     {/* Main Content Grid */}
+    //     <div className="grid lg:grid-cols-3 gap-8">
+    //       {/* Left Column - Images and Details */}
+    //       <div className="lg:col-span-2 space-y-8">
+    //         {/* Image Carousel */}
+    //         <div className="bg-white rounded-[20px] shadow-lg overflow-hidden">
+    //           <div className="relative cursor-pointer" onClick={() => setShowFullscreenSlider(true)}>
+    //             <Slider {...sliderSettings} className="property-slider">
+    //               {property.images?.map((image, index) => (
+    //                 <div key={index} className="relative aspect-[16/9]">
+    //                   <Image
+    //                     src={image}
+    //                     alt={`${property.title} - Image ${index + 1}`}
+    //                     fill
+    //                     className="object-cover"
+    //                   />
+    //                 </div>
+    //               ))}
+    //             </Slider>
+    //           </div>
+    //         </div>
+
+    //         {/* Property Features */}
+    //         <div className="bg-white rounded-[20px] shadow-lg p-6 space-y-6">
+    //           <div className="grid grid-cols-3 gap-6">
+    //             <div className="flex flex-col items-center text-center p-4 bg-gray-50 rounded-xl">
+    //               <FaBed className="text-[#ffa509] text-2xl mb-2" />
+    //               <span className="text-2xl font-bold text-[#050b2c]">{property.features.bedrooms}</span>
+    //               <span className="text-gray-600">غرف نوم</span>
+    //             </div>
+    //             <div className="flex flex-col items-center text-center p-4 bg-gray-50 rounded-xl">
+    //               <FaBath className="text-[#ffa509] text-2xl mb-2" />
+    //               <span className="text-2xl font-bold text-[#050b2c]">{property.features.bathrooms}</span>
+    //               <span className="text-gray-600">الحمامات</span>
+    //             </div>
+    //             <div className="flex flex-col items-center text-center p-4 bg-gray-50 rounded-xl">
+    //               <FaRuler className="text-[#ffa509] text-2xl mb-2" />
+    //               <span className="text-2xl font-bold text-[#050b2c]">{property.features.area}</span>
+    //               <span className="text-gray-600">قدم مربع</span>
+    //             </div>
+    //           </div>
+
+    //           <div className="space-y-4">
+    //             <div className="flex items-center gap-2">
+    //               <BiBuildingHouse className="text-[#ffa509]" />
+    //               <span className="font-medium">نوع العقار:</span>
+    //               <span>{property.propertyType}</span>
+    //             </div>
+    //             <div className="flex items-center gap-2">
+    //               <span className="text-2xl font-bold text-[#ffa509]">
+    //                 {property.price?.toLocaleString()}ر.س{" "}
+    //               </span>
+    //             </div>
+    //           </div>
+
+    //           <div className="pt-6 border-t border-gray-100">
+    //             <h3 className="text-xl font-bold text-[#050b2c] mb-4">وصف</h3>
+    //             <p className="text-gray-600 leading-relaxed">{property.description}</p>
+    //           </div>
+    //         </div>
+
+    //         {/* Owner Actions */}
+    //         {isOwner && (
+    //           <div className="flex gap-4">
+    //             <Link
+    //               href={`/properties/${property._id}/edit`}
+    //               className="flex-1 bg-[#050b2c] text-white px-6 py-3 rounded-xl text-center font-medium hover:bg-[#0a1854] transition-colors"
+    //             >
+    //               تعديل العقار
+    //             </Link>
+    //             <button
+    //               onClick={handleDelete}
+    //               disabled={deleteLoading}
+    //               className="flex-1 bg-red-500 text-white px-6 py-3 rounded-xl font-medium hover:bg-red-600 transition-colors disabled:opacity-50"
+    //             >
+    //               {deleteLoading ? <LoadingSpinner /> : "حذف العقار"}
+    //             </button>
+    //           </div>
+    //         )}
+    //       </div>
+
+    //       {/* Right Column - Contact Form */}
+    //       <div className="lg:col-span-1">
+    //         <div className="bg-white rounded-[20px] shadow-lg p-6 sticky top-8">
+    //           {/* Owner Info */}
+    //           {property.owner && (
+    //             <div className="mb-6 pb-6 border-b border-gray-100">
+    //               <h3 className="text-xl font-bold text-[#050b2c] mb-4">مالك العقار</h3>
+    //               <div className="space-y-3">
+    //                 <div className="flex items-center gap-3">
+    //                   <FaUser className="text-[#ffa509]" />
+    //                   <span>{property.owner.name}</span>
+    //                 </div>
+    //                 <div className="flex items-center gap-3">
+    //                   <FaPhone className="text-[#ffa509]" />
+    //                   <span>{property.owner.phone}</span>
+    //                 </div>
+    //                 <div className="flex items-center gap-3">
+    //                   <FaEnvelope className="text-[#ffa509]" />
+    //                   <span>{property.owner.email}</span>
+    //                 </div>
+    //               </div>
+    //             </div>
+    //           )}
+
+    //           {/* Enquiry Form */}
+    //           {!isOwner && (
+    //             <div>
+    //               <h3 className="text-xl font-bold text-[#050b2c] mb-4">إرسال الاستفسار</h3>
+    //               {!user ? (
+    //                 <div className="text-center py-6">
+    //                   <p className="text-gray-600 mb-4">يرجى تسجيل الدخول لإرسال الاستفسارات إلى مالك العقار</p>
+    //                   <Link 
+    //                     href="/login" 
+    //                     className="inline-block bg-gradient-to-r from-[#050b2c] to-[#0a1854] text-white px-8 py-3 rounded-xl font-medium hover:opacity-90 transition-opacity"
+    //                   >
+    //                     تسجيل الدخول
+    //                   </Link>
+    //                 </div>
+    //               ) : enquirySent ? (
+    //                 <div className="bg-green-50 text-green-800 rounded-xl p-4">
+    //                   لقد تم ارسال استفسارك بنجاح!
+    //                 </div>
+    //               ) : (
+    //                 <form onSubmit={handleEnquiry} className="space-y-4">
+    //                   <textarea
+    //                     value={message}
+    //                     onChange={(e) => setMessage(e.target.value)}
+    //                     placeholder="أدخل رسالتك..."
+    //                     rows="4"
+    //                     className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#ffa509] focus:ring-2 focus:ring-[#ffa509]/20 outline-none transition-colors resize-none"
+    //                     required
+    //                   />
+    //                   <button
+    //                     type="submit"
+    //                     disabled={sending}
+    //                     className="w-full bg-gradient-to-r from-[#050b2c] to-[#0a1854] text-white py-3 rounded-xl font-medium hover:opacity-90 transition-opacity disabled:opacity-50 flex items-center justify-center"
+    //                   >
+    //                     {sending ? <LoadingSpinner /> : "إرسال رسالة"}
+    //                   </button>
+    //                 </form>
+    //               )}
+    //             </div>
+    //           )}
+    //         </div>
+    //       </div>
+    //     </div>
+    //   </div>
+
+    //   {/* Fullscreen Image Carousel Modal */}
+    //   {showFullscreenSlider && (
+    //     <div className="fixed inset-0 bg-black/95 z-50 flex items-center justify-center p-4">
+    //       <button
+    //         onClick={() => setShowFullscreenSlider(false)}
+    //         className="absolute top-6 right-6 text-white/90 hover:text-white transition-colors"
+    //       >
+    //         <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    //           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+    //         </svg>
+    //       </button>
+    //       <div className="w-full max-w-5xl">
+    //         <Slider {...sliderSettings} className="full-screen-slider">
+    //           {property.images?.map((image, index) => (
+    //             <div key={index} className="relative h-[75vh]">
+    //               <Image
+    //                 src={image}
+    //                 alt={`${property.title} - Image ${index + 1}`}
+    //                 fill
+    //                 className="object-contain"
+    //               />
+    //             </div>
+    //           ))}
+    //         </Slider>
+    //       </div>
+    //     </div>
+    //   )}
+    // </>
     <>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        {error && (
-          <Alert
-            type="error"
-            message={error}
-            onClose={() => setError("")}
-            className="mb-4"
-          />
-        )}
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    {error && (
+      <Alert
+        type="error"
+        message={error}
+        onClose={() => setError("")}
+        className="mb-4"
+      />
+    )}
 
-        {/* Property Title Section */}
-        <div className="mb-8">
-          <h1 className="text-4xl font-bold text-[#050b2c] mb-4">{property.title}</h1>
-          <div className="flex items-center gap-2 text-gray-600">
-            <FaMapMarkerAlt className="text-[#ffa509]" />
-            <span>{property.location}</span>
-          </div>
-        </div>
-
-        {/* Main Content Grid */}
-        <div className="grid lg:grid-cols-3 gap-8">
-          {/* Left Column - Images and Details */}
-          <div className="lg:col-span-2 space-y-8">
-            {/* Image Carousel */}
-            <div className="bg-white rounded-[20px] shadow-lg overflow-hidden">
-              <div className="relative cursor-pointer" onClick={() => setShowFullscreenSlider(true)}>
-                <Slider {...sliderSettings} className="property-slider">
-                  {property.images?.map((image, index) => (
-                    <div key={index} className="relative aspect-[16/9]">
-                      <Image
-                        src={image}
-                        alt={`${property.title} - Image ${index + 1}`}
-                        fill
-                        className="object-cover"
-                      />
-                    </div>
-                  ))}
-                </Slider>
-              </div>
-            </div>
-
-            {/* Property Features */}
-            <div className="bg-white rounded-[20px] shadow-lg p-6 space-y-6">
-              <div className="grid grid-cols-3 gap-6">
-                <div className="flex flex-col items-center text-center p-4 bg-gray-50 rounded-xl">
-                  <FaBed className="text-[#ffa509] text-2xl mb-2" />
-                  <span className="text-2xl font-bold text-[#050b2c]">{property.features.bedrooms}</span>
-                  <span className="text-gray-600">غرف نوم</span>
-                </div>
-                <div className="flex flex-col items-center text-center p-4 bg-gray-50 rounded-xl">
-                  <FaBath className="text-[#ffa509] text-2xl mb-2" />
-                  <span className="text-2xl font-bold text-[#050b2c]">{property.features.bathrooms}</span>
-                  <span className="text-gray-600">الحمامات</span>
-                </div>
-                <div className="flex flex-col items-center text-center p-4 bg-gray-50 rounded-xl">
-                  <FaRuler className="text-[#ffa509] text-2xl mb-2" />
-                  <span className="text-2xl font-bold text-[#050b2c]">{property.features.area}</span>
-                  <span className="text-gray-600">قدم مربع</span>
-                </div>
-              </div>
-
-              <div className="space-y-4">
-                <div className="flex items-center gap-2">
-                  <BiBuildingHouse className="text-[#ffa509]" />
-                  <span className="font-medium">نوع العقار:</span>
-                  <span>{property.propertyType}</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <span className="text-2xl font-bold text-[#ffa509]">
-                    {property.price?.toLocaleString()}ر.س{" "}
-                  </span>
-                </div>
-              </div>
-
-              <div className="pt-6 border-t border-gray-100">
-                <h3 className="text-xl font-bold text-[#050b2c] mb-4">وصف</h3>
-                <p className="text-gray-600 leading-relaxed">{property.description}</p>
-              </div>
-            </div>
-
-            {/* Owner Actions */}
-            {isOwner && (
-              <div className="flex gap-4">
-                <Link
-                  href={`/properties/${property._id}/edit`}
-                  className="flex-1 bg-[#050b2c] text-white px-6 py-3 rounded-xl text-center font-medium hover:bg-[#0a1854] transition-colors"
-                >
-                  تعديل العقار
-                </Link>
-                <button
-                  onClick={handleDelete}
-                  disabled={deleteLoading}
-                  className="flex-1 bg-red-500 text-white px-6 py-3 rounded-xl font-medium hover:bg-red-600 transition-colors disabled:opacity-50"
-                >
-                  {deleteLoading ? <LoadingSpinner /> : "حذف العقار"}
-                </button>
-              </div>
-            )}
-          </div>
-
-          {/* Right Column - Contact Form */}
-          <div className="lg:col-span-1">
-            <div className="bg-white rounded-[20px] shadow-lg p-6 sticky top-8">
-              {/* Owner Info */}
-              {property.owner && (
-                <div className="mb-6 pb-6 border-b border-gray-100">
-                  <h3 className="text-xl font-bold text-[#050b2c] mb-4">مالك العقار</h3>
-                  <div className="space-y-3">
-                    <div className="flex items-center gap-3">
-                      <FaUser className="text-[#ffa509]" />
-                      <span>{property.owner.name}</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <FaPhone className="text-[#ffa509]" />
-                      <span>{property.owner.phone}</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <FaEnvelope className="text-[#ffa509]" />
-                      <span>{property.owner.email}</span>
-                    </div>
-                  </div>
-                </div>
-              )}
-
-              {/* Enquiry Form */}
-              {!isOwner && (
-                <div>
-                  <h3 className="text-xl font-bold text-[#050b2c] mb-4">إرسال الاستفسار</h3>
-                  {!user ? (
-                    <div className="text-center py-6">
-                      <p className="text-gray-600 mb-4">يرجى تسجيل الدخول لإرسال الاستفسارات إلى مالك العقار</p>
-                      <Link 
-                        href="/login" 
-                        className="inline-block bg-gradient-to-r from-[#050b2c] to-[#0a1854] text-white px-8 py-3 rounded-xl font-medium hover:opacity-90 transition-opacity"
-                      >
-                        تسجيل الدخول
-                      </Link>
-                    </div>
-                  ) : enquirySent ? (
-                    <div className="bg-green-50 text-green-800 rounded-xl p-4">
-                      لقد تم ارسال استفسارك بنجاح!
-                    </div>
-                  ) : (
-                    <form onSubmit={handleEnquiry} className="space-y-4">
-                      <textarea
-                        value={message}
-                        onChange={(e) => setMessage(e.target.value)}
-                        placeholder="أدخل رسالتك..."
-                        rows="4"
-                        className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#ffa509] focus:ring-2 focus:ring-[#ffa509]/20 outline-none transition-colors resize-none"
-                        required
-                      />
-                      <button
-                        type="submit"
-                        disabled={sending}
-                        className="w-full bg-gradient-to-r from-[#050b2c] to-[#0a1854] text-white py-3 rounded-xl font-medium hover:opacity-90 transition-opacity disabled:opacity-50 flex items-center justify-center"
-                      >
-                        {sending ? <LoadingSpinner /> : "إرسال رسالة"}
-                      </button>
-                    </form>
-                  )}
-                </div>
-              )}
-            </div>
-          </div>
-        </div>
+    {/* Property Title Section */}
+    <div className="mb-8">
+      <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#050b2c] mb-4">
+        {property.title}
+      </h1>
+      <div className="flex items-center gap-2 text-gray-600 text-sm sm:text-base">
+        <FaMapMarkerAlt className="text-[#ffa509]" />
+        <span>{property.location}</span>
       </div>
+    </div>
 
-      {/* Fullscreen Image Carousel Modal */}
-      {showFullscreenSlider && (
-        <div className="fixed inset-0 bg-black/95 z-50 flex items-center justify-center p-4">
-          <button
-            onClick={() => setShowFullscreenSlider(false)}
-            className="absolute top-6 right-6 text-white/90 hover:text-white transition-colors"
+    {/* Main Content Grid */}
+    <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      {/* Left Column - Images and Details */}
+      <div className="lg:col-span-2 space-y-8">
+        {/* Image Carousel */}
+        <div className="bg-white rounded-[20px] shadow-lg overflow-hidden">
+          <div
+            className="relative cursor-pointer"
+            onClick={() => setShowFullscreenSlider(true)}
           >
-            <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          </button>
-          <div className="w-full max-w-5xl">
-            <Slider {...sliderSettings} className="full-screen-slider">
+            <Slider {...sliderSettings} className="property-slider">
               {property.images?.map((image, index) => (
-                <div key={index} className="relative h-[75vh]">
+                <div key={index} className="relative aspect-video">
                   <Image
                     src={image}
                     alt={`${property.title} - Image ${index + 1}`}
                     fill
-                    className="object-contain"
+                    className="object-cover"
                   />
                 </div>
               ))}
             </Slider>
           </div>
         </div>
-      )}
-    </>
+
+        {/* Property Features */}
+        <div className="bg-white rounded-[20px] shadow-lg p-4 sm:p-6 space-y-6">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
+            {[
+              {
+                icon: <FaBed className="text-[#ffa509] text-2xl mb-2" />,
+                value: property.features.bedrooms,
+                label: "غرف نوم",
+              },
+              {
+                icon: <FaBath className="text-[#ffa509] text-2xl mb-2" />,
+                value: property.features.bathrooms,
+                label: "الحمامات",
+              },
+              {
+                icon: <FaRuler className="text-[#ffa509] text-2xl mb-2" />,
+                value: property.features.area,
+                label: "قدم مربع",
+              },
+            ].map(({ icon, value, label }, index) => (
+              <div
+                key={index}
+                className="flex flex-col items-center text-center p-4 bg-gray-50 rounded-xl"
+              >
+                {icon}
+                <span className="text-xl sm:text-2xl font-bold text-[#050b2c]">
+                  {value}
+                </span>
+                <span className="text-gray-600 text-sm sm:text-base">{label}</span>
+              </div>
+            ))}
+          </div>
+
+          <div className="space-y-4">
+            <div className="flex items-center gap-2 text-sm sm:text-base">
+              <BiBuildingHouse className="text-[#ffa509]" />
+              <span className="font-medium">نوع العقار:</span>
+              <span>{property.propertyType}</span>
+            </div>
+            <div className="flex items-center gap-2 text-lg sm:text-2xl font-bold text-[#ffa509]">
+              {property.price?.toLocaleString()}ر.س
+            </div>
+          </div>
+
+          <div className="pt-6 border-t border-gray-100">
+            <h3 className="text-lg sm:text-xl font-bold text-[#050b2c] mb-4">وصف</h3>
+            <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
+              {property.description}
+            </p>
+          </div>
+        </div>
+
+        {/* Owner Actions */}
+        {isOwner && (
+          <div className="flex flex-col sm:flex-row gap-4">
+            <Link
+              href={`/properties/${property._id}/edit`}
+              className="flex-1 bg-[#050b2c] text-white px-6 py-3 rounded-xl text-center font-medium hover:bg-[#0a1854] transition-colors"
+            >
+              تعديل العقار
+            </Link>
+            <button
+              onClick={handleDelete}
+              disabled={deleteLoading}
+              className="flex-1 bg-red-500 text-white px-6 py-3 rounded-xl font-medium hover:bg-red-600 transition-colors disabled:opacity-50"
+            >
+              {deleteLoading ? <LoadingSpinner /> : "حذف العقار"}
+            </button>
+          </div>
+        )}
+      </div>
+
+      {/* Right Column - Contact Form */}
+      <div className="lg:col-span-1">
+        <div className="bg-white rounded-[20px] shadow-lg p-4 sm:p-6 sticky top-8">
+          {/* Owner Info */}
+          {property.owner && (
+            <div className="mb-6 pb-6 border-b border-gray-100">
+              <h3 className="text-lg sm:text-xl font-bold text-[#050b2c] mb-4">
+                مالك العقار
+              </h3>
+              <div className="space-y-3">
+                {[
+                  { icon: <FaUser />, value: property.owner.name },
+                  { icon: <FaPhone />, value: property.owner.phone },
+                  { icon: <FaEnvelope />, value: property.owner.email },
+                ].map(({ icon, value }, index) => (
+                  <div key={index} className="flex items-center gap-3 text-sm sm:text-base">
+                    {icon}
+                    <span>{value}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Enquiry Form */}
+          {!isOwner && (
+            <div>
+              <h3 className="text-lg sm:text-xl font-bold text-[#050b2c] mb-4">
+                إرسال الاستفسار
+              </h3>
+              {!user ? (
+                <div className="text-center py-6">
+                  <p className="text-gray-600 mb-4 text-sm sm:text-base">
+                    يرجى تسجيل الدخول لإرسال الاستفسارات إلى مالك العقار
+                  </p>
+                  <Link
+                    href="/login"
+                    className="inline-block bg-gradient-to-r from-[#050b2c] to-[#0a1854] text-white px-6 sm:px-8 py-3 rounded-xl font-medium hover:opacity-90 transition-opacity"
+                  >
+                    تسجيل الدخول
+                  </Link>
+                </div>
+              ) : enquirySent ? (
+                <div className="bg-green-50 text-green-800 rounded-xl p-4">
+                  لقد تم ارسال استفسارك بنجاح!
+                </div>
+              ) : (
+                <form onSubmit={handleEnquiry} className="space-y-4">
+                  <textarea
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
+                    placeholder="أدخل رسالتك..."
+                    rows="4"
+                    className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#ffa509] focus:ring-2 focus:ring-[#ffa509]/20 outline-none transition-colors resize-none"
+                    required
+                  />
+                  <button
+                    type="submit"
+                    disabled={sending}
+                    className="w-full bg-gradient-to-r from-[#050b2c] to-[#0a1854] text-white py-3 rounded-xl font-medium hover:opacity-90 transition-opacity disabled:opacity-50 flex items-center justify-center"
+                  >
+                    {sending ? <LoadingSpinner /> : "إرسال رسالة"}
+                  </button>
+                </form>
+              )}
+            </div>
+          )}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {/* Fullscreen Image Carousel Modal */}
+  {showFullscreenSlider && (
+    <div className="fixed inset-0 bg-black/95 z-50 flex items-center justify-center p-4">
+      <button
+        onClick={() => setShowFullscreenSlider(false)}
+        className="absolute top-6 right-6 text-white/90 hover:text-white transition-colors"
+      >
+        <svg
+          className="w-8 h-8"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M6 18L18 6M6 6l12 12"
+          />
+        </svg>
+      </button>
+      <div className="w-full max-w-5xl">
+        <Slider {...sliderSettings} className="full-screen-slider">
+          {property.images?.map((image, index) => (
+            <div key={index} className="relative h-[75vh]">
+              <Image
+                src={image}
+                alt={`${property.title} - Image ${index + 1}`}
+                fill
+                className="object-contain"
+              />
+            </div>
+          ))}
+        </Slider>
+      </div>
+    </div>
+  )}
+</>
+
   );
 }
